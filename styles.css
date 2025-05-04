@@ -8,16 +8,16 @@ body {
 }
 
 .container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 40px;
+    max-width: 100%; /* Allow full width on mobile */
+    margin: 20px auto; /* Reduced margin for mobile */
+    padding: 20px; /* Reduced padding for mobile */
     background: linear-gradient(to bottom right, #4a4e69, #9a8c98);
     border-radius: 15px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Adjust heading size */
     margin-bottom: 20px;
     color: #f9c74f;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
@@ -26,12 +26,12 @@ h1 {
 .bracket {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Reduced gap between matchups */
 }
 
 .matchup {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Change to column layout for mobile */
     align-items: center;
     background-color: #222;
     padding: 15px;
@@ -40,7 +40,7 @@ h1 {
 }
 
 .team {
-    width: 120px;
+    width: auto; /* Allow for responsive width */
     padding: 10px 15px;
     border: 2px solid #f9c74f;
     border-radius: 8px;
@@ -56,7 +56,7 @@ h1 {
 }
 
 .versus {
-    margin: 0 30px;
+    margin: 10px 0; /* Centered for mobile layout */
     font-size: 1.5rem;
     font-weight: bold;
     color: #f9c74f;
@@ -70,11 +70,40 @@ h1 {
 }
 
 .players input {
-    width: 100px;
+    width: 80%; /* Responsive width */
     padding: 5px;
-    margin: 5px;
+    margin: 5px 0; /* Adjusted margin */
     border: 2px solid #f9c74f;
     border-radius: 5px;
     background-color: #333;
-    color: #fff;
+    color:#fff;
+    font-size: 1rem; /* Increased font size for better readability */
+}
+
+/* Responsive design for screens wider than 600px */
+@media (min-width: 600px) {
+    .container {
+        max-width: 800px; /* Apply max-width on larger screens */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Increase heading size */
+    }
+
+    .matchup {
+        flex-direction: row; /* Change to row layout for wider screens */
+        justify-content: space-around; /* Distribute teams evenly */
+    }
+
+    .team {
+        width: 120px; /* Fixed width for teams */
+    }
+
+    .versus {
+        margin: 0 20px; /* Margin for row layout */
+    }
+
+    .players {
+        margin-top: 0; /* Remove extra margin for row layout */
+    }
 }
